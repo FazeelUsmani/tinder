@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import TinderCard from "react-tinder-card";
 import "./TinderCards.css";
 
@@ -12,7 +12,7 @@ function TinderCards() {
         {
             name: 'Trump',
             url: 
-                "https://newsinfo.inquirer.net/files/2020/08/AP20226667076368-scaled.jpg",
+                    "https://newsinfo.inquirer.net/files/2020/08/AP20226667076368-scaled.jpg",
         },
         {
             name: 'Elizabeth',
@@ -65,7 +65,7 @@ function TinderCards() {
 				))}
 			</div>  
         </div>
-    )
+    )}
 
 
 export default TinderCards;

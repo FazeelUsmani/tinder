@@ -1,0 +1,38 @@
+.card {
+    position: relative;
+    width: 600px;
+    padding: 20px;
+    max-width: 85vw;
+    height: 50vh;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card > h2 {
+    position: absolute;      
+}
+
+.tinderCards__cardContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.swipe {
+    position: absolute;
+}
+
+.fazeel {
+    background-image: url(./img/Fazeel.jpg);
+}
+.bharath {
+    background-image: url(./img/Bharath.jpg);
+}
+.kovi {
+    background-image: url(./img/kovi.jpg);
+}
+.sai {
+    background-image: url(./img/Sai.jpg);
+}
