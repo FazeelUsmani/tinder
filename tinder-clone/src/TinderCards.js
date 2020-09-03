@@ -7,28 +7,28 @@ function TinderCards() {
 
     // Commenting hardcoded variables & arrays
 
-    const [people, setPeople] = useState([        
-        {
-            name: 'Modi',
-            url: 
-                    "https://images.news18.com/ibnlive/uploads/2020/07/1595742622_modi.png",   		
-            },
-        {
-            name: 'Trump',
-            url: 
-                    "https://newsinfo.inquirer.net/files/2020/08/AP20226667076368-scaled.jpg",
-        },
-        {
-            name: 'Elizabeth',
-            url: 
-                    "https://images.news18.com/ibnlive/uploads/2019/04/QUEEN-ELIZABETH1.jpg",
-        },        				
-        {
-            name: 'Putin',												
-            url:
-                    "https://www.abc.net.au/cm/rimage/12310228-16x9-xlarge.jpg?v=2",
-        },
-	]);
+    // const [people, setPeople] = useState([        
+    //     {
+    //         name: 'Modi',
+    //         url: 
+    //                 "https://images.news18.com/ibnlive/uploads/2020/07/1595742622_modi.png",   		
+    //         },
+    //     {
+    //         name: 'Trump',
+    //         url: 
+    //                 "https://newsinfo.inquirer.net/files/2020/08/AP20226667076368-scaled.jpg",
+    //     },
+    //     {
+    //         name: 'Elizabeth',
+    //         url: 
+    //                 "https://images.news18.com/ibnlive/uploads/2019/04/QUEEN-ELIZABETH1.jpg",
+    //     },        				
+    //     {
+    //         name: 'Putin',												
+    //         url:
+    //                 "https://www.abc.net.au/cm/rimage/12310228-16x9-xlarge.jpg?v=2",
+    //     },
+	// ]);
     
     // BAD way of initialization
     // const people =[];
@@ -40,15 +40,19 @@ function TinderCards() {
 
     // Piece of code which runs based on a condition
     // Connecting to a database
+
+    const [people, setPeople] = useState([]);
     useEffect(() => {
         // this is where the code runs...
 
-        // Snapshot = taking picture of a DB
-        database.collection('people').onSnapshot(snapshot => (
+        // Snapshot = this works in realtime
+        database
+        .collection('people')
+        .onSnapshot((snapshot) => (
             // snapshot.docs = records in the DB
-            setPeople(snapshot.docs.map(doc => doc.data()))
+            setPeople(snapshot.docs.map((doc) => doc.data()))
         ))
-        
+                
         // effect
         return () => {
         	// cleanup
