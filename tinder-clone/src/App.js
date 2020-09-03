@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header';
 import TinderCards from './TinderCards.js';
+// import PricingCards from './PricingCards.js';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import './App.css';
@@ -21,6 +21,11 @@ function App() {
           </Route>
           <Route path="/">            
             <TinderCards />
+
+            {/* Pricing Card created for sooper-ott */}
+            {/* <PricingCards /> */}
+
+
           </Route>
         </Switch>
       </Router>
