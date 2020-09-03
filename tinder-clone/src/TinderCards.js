@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import TinderCard from "react-tinder-card";
+import database from "./firebase";
 import "./TinderCards.css";
 
 function TinderCards() {
+
+    // Commenting hardcoded variables & arrays
+
     const [people, setPeople] = useState([        
         {
             name: 'Modi',
@@ -34,12 +38,30 @@ function TinderCards() {
     // Pushing in array --> React
     // setPeople([...people, 'Fazeel', 'Usmani']);
 
+    // Piece of code which runs based on a condition
+    // Connecting to a database
+    useEffect(() => {
+        // this is where the code runs...
+
+        // Snapshot = taking picture of a DB
+        database.collection('people').onSnapshot(snapshot => (
+            // snapshot.docs = records in the DB
+            setPeople(snapshot.docs.map(doc => doc.data()))
+        ))
+        
+        // effect
+        return () => {
+        	// cleanup
+        }
+
+        // this will run ONCE when the component loads, and never again
+    }, []);
+
 
     return (
         <div>
             <h1>TinderCards</h1> 
             <div className="tinderCards__cardContainer">
-
 				{people.map( (person) => (
                     <TinderCard
                             className="swipe"
